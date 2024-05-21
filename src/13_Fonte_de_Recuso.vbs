@@ -1,11 +1,12 @@
 Sub FonteRecurso()
-    Dim ws As Worksheet
-    
-    pasta = "C:\Users\usuario\Documents\" ' inserir caminho correto
 
-    arquivo = Dir(pasta)
+Dim ws As Worksheet
 
-    Do Until arquivo = ""
+pasta = "C:\Users\usuario\Documents\" ' inserir caminho correto
+
+arquivo = Dir(pasta)
+
+Do Until arquivo = ""
     
     Set wb = Workbooks.Open(pasta & arquivo)
     
