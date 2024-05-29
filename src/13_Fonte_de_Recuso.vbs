@@ -1,13 +1,38 @@
-Sub FonteRecurso()
+Option Explicit
+Global C As Integer
+Global R As Integer
+Sub find_value()
+
+    Do While IsEmpty(ActiveCell.Value)
+        ActiveCell.Offset(0, 1).Select
+    Loop
+    
+End Sub
+
+Sub take_value()
+
+    With ActiveCell
+        C = .Column
+        R = .Row
+    End With
+
+End Sub
+
+Sub Main()
 
 Dim ws As Worksheet
-    
-pasta = "C:\Users\usuario\Documents\" ' inserir caminho correto
+Dim pasta As String
+Dim arquivo As String
+Dim wb As Workbook
+Dim Rng As Range
+
+
+pasta = "C:\Extratos\Fontes\" 'nome caminho desejado
 
 arquivo = Dir(pasta)
 
 Do Until arquivo = ""
-        
+
     Set wb = Workbooks.Open(pasta & arquivo)
     
     ' SALDO FIN. INICIAL AJUSTADO
@@ -15,14 +40,8 @@ Do Until arquivo = ""
             Cells.Find(What:="Saldo fin. inicial ajustado:", After:=ActiveCell, LookIn:=xlFormulas, LookAt _
         :=xlPart, SearchOrder:=xlByRows, SearchDirection:=xlNext, MatchCase:= _
         True, SearchFormat:=False).Activate
-     
-    With ActiveCell
-        C = .Column
-        R = .Row
-    End With
-    
+    take_value
     Set ws = wb.Sheets("Sheet1")
-    
     Set Rng = ws.Cells(R, C)
     Rng.Select
     Selection.Cut
@@ -30,15 +49,8 @@ Do Until arquivo = ""
     ActiveSheet.Paste
     Set Rng = ws.Cells(R, C)
     Rng.Select
-    Do While IsEmpty(ActiveCell.Value)
-        ActiveCell.Offset(0, 1).Select
-    Loop
-    
-    With ActiveCell
-        C = .Column
-        R = .Row
-    End With
-    
+    find_value
+    take_value
     Set Rng = ws.Cells(R, C)
     Rng.Select
     Selection.Cut
@@ -51,11 +63,7 @@ Do Until arquivo = ""
     :=xlPart, SearchOrder:=xlByRows, SearchDirection:=xlNext, MatchCase:= _
     True, SearchFormat:=False).Activate
     
-    With ActiveCell
-        C = .Column
-        R = .Row
-    End With
-    
+    take_value
     Set Rng = ws.Cells(R, C)
     Rng.Select
     Selection.Cut
@@ -63,15 +71,8 @@ Do Until arquivo = ""
     ActiveSheet.Paste
     Set Rng = ws.Cells(R, C)
     Rng.Select
-    Do While IsEmpty(ActiveCell.Value)
-        ActiveCell.Offset(0, 1).Select
-    Loop
-    
-    With ActiveCell
-        C = .Column
-        R = .Row
-    End With
-    
+    find_value
+    take_value
     Set Rng = ws.Cells(R, C)
     Rng.Select
     Selection.Cut
@@ -84,11 +85,7 @@ Do Until arquivo = ""
     :=xlPart, SearchOrder:=xlByRows, SearchDirection:=xlNext, MatchCase:= _
     True, SearchFormat:=False).Activate
     
-    With ActiveCell
-        C = .Column
-        R = .Row
-    End With
-    
+    take_value
     Set Rng = ws.Cells(R, C)
     Rng.Select
     Selection.Cut
@@ -96,33 +93,21 @@ Do Until arquivo = ""
     ActiveSheet.Paste
     Set Rng = ws.Cells(R, C)
     Rng.Select
-    Do While IsEmpty(ActiveCell.Value)
-        ActiveCell.Offset(0, 1).Select
-    Loop
-    
-    With ActiveCell
-        C = .Column
-        R = .Row
-    End With
-    
+    find_value
+    take_value
     Set Rng = ws.Cells(R, C)
     Rng.Select
     Selection.Cut
     Range("B3").Select
     ActiveSheet.Paste
     
-    
 ' INGRESSO
-    
+
             Cells.Find(What:="Ingresso:", After:=ActiveCell, LookIn:=xlFormulas, LookAt _
     :=xlPart, SearchOrder:=xlByRows, SearchDirection:=xlNext, MatchCase:= _
     True, SearchFormat:=False).Activate
     
-    With ActiveCell
-        C = .Column
-        R = .Row
-    End With
-    
+    take_value
     Set Rng = ws.Cells(R, C)
     Rng.Select
     Selection.Cut
@@ -130,15 +115,8 @@ Do Until arquivo = ""
     ActiveSheet.Paste
     Set Rng = ws.Cells(R, C)
     Rng.Select
-    Do While IsEmpty(ActiveCell.Value)
-        ActiveCell.Offset(0, 1).Select
-    Loop
-    
-    With ActiveCell
-        C = .Column
-        R = .Row
-    End With
-    
+    find_value
+    take_value
     Set Rng = ws.Cells(R, C)
     Rng.Select
     Selection.Cut
@@ -151,11 +129,7 @@ Do Until arquivo = ""
     :=xlPart, SearchOrder:=xlByRows, SearchDirection:=xlNext, MatchCase:= _
     True, SearchFormat:=False).Activate
     
-    With ActiveCell
-        C = .Column
-        R = .Row
-    End With
-    
+    take_value
     Set Rng = ws.Cells(R, C)
     Rng.Select
     Selection.Cut
@@ -163,15 +137,8 @@ Do Until arquivo = ""
     ActiveSheet.Paste
     Set Rng = ws.Cells(R, C)
     Rng.Select
-    Do While IsEmpty(ActiveCell.Value)
-        ActiveCell.Offset(0, 1).Select
-    Loop
-    
-    With ActiveCell
-        C = .Column
-        R = .Row
-    End With
-    
+    find_value
+    take_value
     Set Rng = ws.Cells(R, C)
     Rng.Select
     Selection.Cut
@@ -184,11 +151,7 @@ Do Until arquivo = ""
     :=xlPart, SearchOrder:=xlByRows, SearchDirection:=xlNext, MatchCase:= _
     True, SearchFormat:=False).Activate
     
-    With ActiveCell
-        C = .Column
-        R = .Row
-    End With
-    
+    take_value
     Set Rng = ws.Cells(R, C)
     Rng.Select
     Selection.Cut
@@ -196,15 +159,8 @@ Do Until arquivo = ""
     ActiveSheet.Paste
     Set Rng = ws.Cells(R, C)
     Rng.Select
-    Do While IsEmpty(ActiveCell.Value)
-        ActiveCell.Offset(0, 1).Select
-    Loop
-    
-    With ActiveCell
-        C = .Column
-        R = .Row
-    End With
-    
+    find_value
+    take_value
     Set Rng = ws.Cells(R, C)
     Rng.Select
     Selection.Cut
@@ -217,10 +173,7 @@ Do Until arquivo = ""
     :=xlPart, SearchOrder:=xlByRows, SearchDirection:=xlNext, MatchCase:= _
     True, SearchFormat:=False).Activate
     
-    With ActiveCell
-        C = .Column
-        R = .Row
-    End With
+    take_value
     
     Set Rng = ws.Cells(R, C)
     Rng.Select
@@ -229,15 +182,8 @@ Do Until arquivo = ""
     ActiveSheet.Paste
     Set Rng = ws.Cells(R, C)
     Rng.Select
-    Do While IsEmpty(ActiveCell.Value)
-        ActiveCell.Offset(0, 1).Select
-    Loop
-    
-    With ActiveCell
-        C = .Column
-        R = .Row
-    End With
-    
+    find_value
+    take_value
     Set Rng = ws.Cells(R, C)
     Rng.Select
     Selection.Cut
@@ -250,11 +196,7 @@ Do Until arquivo = ""
     :=xlPart, SearchOrder:=xlByRows, SearchDirection:=xlNext, MatchCase:= _
     True, SearchFormat:=False).Activate
     
-    With ActiveCell
-        C = .Column
-        R = .Row
-    End With
-    
+    take_value
     Set Rng = ws.Cells(R, C)
     Rng.Select
     Selection.Cut
@@ -262,15 +204,8 @@ Do Until arquivo = ""
     ActiveSheet.Paste
     Set Rng = ws.Cells(R, C)
     Rng.Select
-    Do While IsEmpty(ActiveCell.Value)
-        ActiveCell.Offset(0, 1).Select
-    Loop
-    
-    With ActiveCell
-        C = .Column
-        R = .Row
-    End With
-    
+    find_value
+    take_value
     Set Rng = ws.Cells(R, C)
     Rng.Select
     Selection.Cut
@@ -283,11 +218,7 @@ Do Until arquivo = ""
     :=xlPart, SearchOrder:=xlByRows, SearchDirection:=xlNext, MatchCase:= _
     True, SearchFormat:=False).Activate
     
-    With ActiveCell
-        C = .Column
-        R = .Row
-    End With
-    
+    take_value
     Set Rng = ws.Cells(R, C)
     Rng.Select
     Selection.Cut
@@ -295,15 +226,8 @@ Do Until arquivo = ""
     ActiveSheet.Paste
     Set Rng = ws.Cells(R, C)
     Rng.Select
-    Do While IsEmpty(ActiveCell.Value)
-        ActiveCell.Offset(0, 1).Select
-    Loop
-    
-    With ActiveCell
-        C = .Column
-        R = .Row
-    End With
-    
+    find_value
+    take_value
     Set Rng = ws.Cells(R, C)
     Rng.Select
     Selection.Cut
@@ -316,11 +240,7 @@ Do Until arquivo = ""
     :=xlPart, SearchOrder:=xlByRows, SearchDirection:=xlNext, MatchCase:= _
     True, SearchFormat:=False).Activate
     
-    With ActiveCell
-        C = .Column
-        R = .Row
-    End With
-    
+    take_value
     Set Rng = ws.Cells(R, C)
     Rng.Select
     Selection.Cut
@@ -328,15 +248,8 @@ Do Until arquivo = ""
     ActiveSheet.Paste
     Set Rng = ws.Cells(R, C)
     Rng.Select
-    Do While IsEmpty(ActiveCell.Value)
-        ActiveCell.Offset(0, 1).Select
-    Loop
-    
-    With ActiveCell
-        C = .Column
-        R = .Row
-    End With
-    
+    find_value
+    take_value
     Set Rng = ws.Cells(R, C)
     Rng.Select
     Selection.Cut
@@ -349,11 +262,7 @@ Do Until arquivo = ""
     :=xlPart, SearchOrder:=xlByRows, SearchDirection:=xlNext, MatchCase:= _
     True, SearchFormat:=False).Activate
     
-    With ActiveCell
-        C = .Column
-        R = .Row
-    End With
-    
+    take_value
     Set Rng = ws.Cells(R, C)
     Rng.Select
     Selection.Cut
@@ -361,15 +270,8 @@ Do Until arquivo = ""
     ActiveSheet.Paste
     Set Rng = ws.Cells(R, C)
     Rng.Select
-    Do While IsEmpty(ActiveCell.Value)
-        ActiveCell.Offset(0, 1).Select
-    Loop
-    
-    With ActiveCell
-        C = .Column
-        R = .Row
-    End With
-    
+    find_value
+    take_value
     Set Rng = ws.Cells(R, C)
     Rng.Select
     Selection.Cut
@@ -385,72 +287,43 @@ Do Until arquivo = ""
     :=xlPart, SearchOrder:=xlByRows, SearchDirection:=xlNext, MatchCase:= _
     True, SearchFormat:=False).Activate
 
-    With ActiveCell
-        C = .Column
-        R = .Row
-    End With
-    
+    take_value
     Cells(R, C).End(xlToLeft).Select
     ActiveCell.Offset(1, 0).Select
-    Do While IsEmpty(ActiveCell.Value)
-        ActiveCell.Offset(0, 1).Select
-    Loop
-    With ActiveCell
-        C = .Column
-        R = .Row
-    End With
+    find_value
+    take_value
     Selection.Cut
     Range("B11").Select
     ActiveSheet.Paste
     Cells(R, C).Select
     
     ' parte 2
-    Do While IsEmpty(ActiveCell.Value)
-        ActiveCell.Offset(0, 1).Select
-    Loop
-    With ActiveCell
-        C = .Column
-        R = .Row
-    End With
+    find_value
+    take_value
     Selection.Cut
     Range("C11").Select
     ActiveSheet.Paste
     Cells(R, C).Select
     
     ' parte 3
-    Do While IsEmpty(ActiveCell.Value)
-        ActiveCell.Offset(0, 1).Select
-    Loop
-    With ActiveCell
-        C = .Column
-        R = .Row
-    End With
+    find_value
+    take_value
     Selection.Cut
     Range("D11").Select
     ActiveSheet.Paste
     Cells(R, C).Select
     
     'parte 3
-    Do While IsEmpty(ActiveCell.Value)
-        ActiveCell.Offset(0, 1).Select
-    Loop
-    With ActiveCell
-        C = .Column
-        R = .Row
-    End With
+    find_value
+    take_value
     Selection.Cut
     Range("E11").Select
     ActiveSheet.Paste
     Cells(R, C).Select
     
     ' parte 4
-    Do While IsEmpty(ActiveCell.Value)
-        ActiveCell.Offset(0, 1).Select
-    Loop
-    With ActiveCell
-        C = .Column
-        R = .Row
-    End With
+    find_value
+    take_value
     Selection.Cut
     Range("F11").Select
     ActiveSheet.Paste
@@ -466,10 +339,7 @@ Do Until arquivo = ""
         End If
         counter = counter + 1
     Loop
-    With ActiveCell
-        C = .Column
-        R = .Row
-    End With
+    take_value
     Selection.Cut
     Range("G11").Select
     ActiveSheet.Paste
@@ -482,6 +352,6 @@ Do Until arquivo = ""
 arquivo = Dir()
 
 Loop
-
-    
 End Sub
+
+
