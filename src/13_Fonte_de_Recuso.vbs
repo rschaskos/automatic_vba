@@ -63,6 +63,8 @@ Sub Main()
                 Rng.Cut Destination:=Range("A9")
             ElseIf cont1 = 10 Then
                 Rng.Cut Destination:=Range("A10")
+            ElseIf cont1 = 11 Then
+                Rng.Cut Destination:=Range("A11")
             End If
             find_value
             take_value
@@ -87,11 +89,13 @@ Sub Main()
                 Rng.Cut Destination:=Range("B9")
             ElseIf cont1 = 10 Then
                 Rng.Cut Destination:=Range("B10")
+            ElseIf cont1 = 11 Then
+                Rng.Cut Destination:=Range("B11")
             End If
             cont1 = cont1 + 1
         Next termo
         
-        Range("A11").Value = "Restos a pagar Saldo"
+        Range("A12").Value = "Restos a pagar Saldo"
             Cells.Find(What:="Inscritos", After:=ActiveCell, LookIn:=xlFormulas, LookAt _
         :=xlPart, SearchOrder:=xlByRows, SearchDirection:=xlNext, MatchCase:= _
         True, SearchFormat:=False).Activate
@@ -106,15 +110,15 @@ Sub Main()
             take_value
             Set Rng = ws.Cells(R, C)
             If cont2 = 1 Then
-                Rng.Cut Destination:=Range("B11")
+                Rng.Cut Destination:=Range("B12")
             ElseIf cont2 = 2 Then
-                Rng.Cut Destination:=Range("C11")
+                Rng.Cut Destination:=Range("C12")
             ElseIf cont2 = 3 Then
-                Rng.Cut Destination:=Range("D11")
+                Rng.Cut Destination:=Range("D12")
             ElseIf cont2 = 4 Then
-                Rng.Cut Destination:=Range("E11")
+                Rng.Cut Destination:=Range("E12")
             ElseIf cont2 = 5 Then
-                Rng.Cut Destination:=Range("F11")
+                Rng.Cut Destination:=Range("F12")
             End If
             cont2 = cont2 + 1
         Next i
@@ -130,10 +134,10 @@ Sub Main()
         Loop
         take_value
         Set Rng = ws.Cells(R, C)
-        Rng.Cut Destination:=Range("G11")
+        Rng.Cut Destination:=Range("G12")
         
+        Range("A1").Select
         Columns("A:A").EntireColumn.AutoFit
-		Range("A1").Select
         Application.DisplayAlerts = False
         wb.Close Savechanges:=1
         arquivo = Dir
