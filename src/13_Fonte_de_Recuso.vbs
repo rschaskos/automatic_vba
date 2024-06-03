@@ -103,7 +103,7 @@ Sub Main()
         Cells(R, C).End(xlToLeft).Select
         ActiveCell.Offset(1, 0).Select
         
-        
+        ' tratamento especial nessa célula
         cont2 = 1
         For i = 1 To 5
             find_value
