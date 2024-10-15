@@ -1,5 +1,7 @@
 Sub bb()
 
+'@Lang VBA
+
 	Dim i As Integer
 
 	pasta = "C:\Users\usuario\Documents\" ' inserir caminho correto

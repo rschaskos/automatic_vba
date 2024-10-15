@@ -1,4 +1,6 @@
-Sub CAIXA_TXT()
+Sub BB_TXT()
+
+'@Lang VBA
 
 	pasta = "C:\Users\usuario\Documents\" ' inserir caminho correto
 		

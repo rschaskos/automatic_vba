@@ -1,5 +1,7 @@
 Sub Ajuste()
 
+'@Lang VBA
+
 	pasta = "C:\Users\usuario\Documents\" ' inserir caminho correto
 
 	arquivo = Dir(pasta)

@@ -1,5 +1,7 @@
 Option Explicit
 
+'@Lang VBA
+
 Global C As Integer
 Global R As Integer
 

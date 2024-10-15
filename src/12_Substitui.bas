@@ -1,5 +1,7 @@
 Sub substitui()
 
+'@Lang VBA
+
 	Dim LR As Integer
 
 	pasta = "C:\Users\usuario\Documents\" ' inserir caminho correto

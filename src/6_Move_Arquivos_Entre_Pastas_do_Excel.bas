@@ -1,5 +1,7 @@
 Sub cp()
 
+'@Lang VBA
+
 'inserir data atual
 Dim CurrDate As Date
 Dim LR As Long
