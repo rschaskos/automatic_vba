@@ -19,7 +19,7 @@ Sub NextSheet()
     Dim destino As Range
     Dim dados As Worksheet
 
-		CriarAba
+	CriarAba
     
     ' Define a aba "DADOS"
     Set dados = Sheets("DADOS")
