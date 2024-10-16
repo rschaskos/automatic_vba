@@ -1,3 +1,14 @@
+Sub CriarAba()
+    Dim novaAba As Worksheet
+
+    ' Cria uma nova aba chamada "DADOS"
+    Set novaAba = ThisWorkbook.Worksheets.Add
+    novaAba.Name = "DADOS"
+
+    ' Move a aba "DADOS" para ser a primeira aba
+    novaAba.Move Before:=ThisWorkbook.Worksheets(1)
+End Sub
+
 Sub NextSheet()
 
 '@Lang VBA
@@ -7,6 +18,8 @@ Sub NextSheet()
     Dim ultimaColuna As Long
     Dim destino As Range
     Dim dados As Worksheet
+
+		CriarAba
     
     ' Define a aba "DADOS"
     Set dados = Sheets("DADOS")
